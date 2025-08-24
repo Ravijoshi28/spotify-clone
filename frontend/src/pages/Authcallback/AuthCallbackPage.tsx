@@ -6,7 +6,7 @@ import { useEffect } from "react"
 import {  useNavigate } from "react-router-dom";
 
 
-function AuthCallbackPage() {
+function AuthCallbackPage(){
   const navigate=useNavigate();
 
 
@@ -45,4 +45,4 @@ function AuthCallbackPage() {
   )
 }
 
-export default AuthCallbackPage 
+export default AuthCallbackPage
