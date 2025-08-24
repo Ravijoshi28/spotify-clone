@@ -1,13 +1,23 @@
 {
   "compilerOptions": {
-     "jsx": "react-jsx",
-    "moduleResolution": "node",
+    "target": "ESNext",                         // modern JS target
+    "module": "ESNext",                         // needed for import.meta
+    "jsx": "react-jsx",                          // your current setting
+    "moduleResolution": "Node",
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
     "skipLibCheck": true,
     "baseUrl": "src",
     "paths": {
       "@/*": ["*"]
-    }
-  }
+    },
+    "strict": true,                              // optional but recommended
+    "noEmit": true,                              // Vite handles build
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "downlevelIteration": true,                  // for Set<string> iteration
+    "allowImportingTsExtensions": true           // allow imports ending with .tsx
+  },
+  "include": ["src"],
+  "exclude": ["node_modules"]
 }
