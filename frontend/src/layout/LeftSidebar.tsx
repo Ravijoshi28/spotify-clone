@@ -1,4 +1,4 @@
-import { HomeIcon,  Library } from "lucide-react"
+import { HomeIcon,  Library, MessageSquareIcon } from "lucide-react"
 import { Link } from "react-router-dom"
 import { buttonVariants } from "../components/ui/ui/button"
 import { cn } from "@/lib/utils"
@@ -36,7 +36,7 @@ const {isloadingAlbum,albums,fetchAlbums}=useMusic();
                   variant:"ghost",
                   className:"w-full justify-start text-white hover:bg-zinc-600"
                 }))}>
-                <HomeIcon className="mr-2 size-5"/><span className="hidden md:inline">Messages...</span></Link>
+                < MessageSquareIcon className="mr-2 size-5"/><span className="hidden md:inline">Messages...</span></Link>
                 </SignedIn>
             </div>
         </div>

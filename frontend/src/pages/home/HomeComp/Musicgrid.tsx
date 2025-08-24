@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/ui/button";
 import FeaturedGridSkeleton from "@/skeleton/GridSkeleton";
 import type { Song } from "@/types"
 import PlayButton from "./PlayButton";
+import { UsePlayer } from "@/stores/usePlayer";
 
 type SectionProp={
     title:string;
@@ -11,7 +12,13 @@ type SectionProp={
 
 const Musicgrid=({songs,title,isloading}:SectionProp) =>{
 
+const {setCurrentSong,togglePlay,currentSong}=UsePlayer();
         if(isloading)return <FeaturedGridSkeleton/>
+        
+        const handle=(s:Song)=>{
+            if(s._id===currentSong?._id) togglePlay();
+            else setCurrentSong(s);
+        }
 
   return (
     <div className="mb-8">
@@ -22,7 +29,7 @@ const Musicgrid=({songs,title,isloading}:SectionProp) =>{
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
             {songs.map((s)=>(
-                    <div key={s._id}
+                    <div key={s._id} onClick={()=>handle(s)}
                     className="bg-zinc-800/40 rounded-md hover:bg-zinc-700/40 transition-all group cursor-pointer">
                         <div className="relative mb-4">
                             <div className="aspect-square rounded-mb shadow-lg overflow-hidden">

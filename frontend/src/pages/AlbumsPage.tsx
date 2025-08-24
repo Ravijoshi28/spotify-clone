@@ -126,7 +126,9 @@ function AlbumPage() {
                             <div className="">{s.artist}</div>
                           </div>
                         </div>
-                         <div className="flex items-center">{s.createdAt.toLocaleDateString().split("T")[0]}</div>
+                         <div className="flex items-center">{s.createdAt instanceof Date
+            ? s.createdAt.toISOString().split("T")[0]
+              : new Date(s.createdAt).toISOString().split("T")[0]}</div>
                           <div className="flex items-center">{formatDuration(s.duration)}</div>
                       </div> )
 })}

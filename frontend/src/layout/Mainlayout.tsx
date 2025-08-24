@@ -23,7 +23,7 @@ function Mainlayout() {
   return (
     <div className="h-screen bg-black text-white flex flex-col">
             <ResizablePanelGroup direction="horizontal" className="flex-1 flex h-full overflow-hidden p-2">
-                <ResizablePanel defaultSize={20} minSize={isMobile?0:10} maxSize={30}>
+                <ResizablePanel defaultSize={27} minSize={isMobile?25:0}  maxSize={isMobile?30:40}>
 
                   <AudioPlayer/>
 

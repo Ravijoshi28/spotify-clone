@@ -18,7 +18,7 @@ function StatsCard({icon:Icon,bgColor,iconColor,value,label}:StatCardInterface) 
             </div>
             <div >
                 <p className="text-sm text-zinc-400">{label}</p>
-                <p className="text-2xl font-bold">{value}</p>
+                <p className="text-2xl text-zinc-400 font-bold">{value}</p>
             </div>
         </div>
     </CardContent>
